@@ -1,0 +1,136 @@
+#!/bin/bash
+
+set -e
+
+dir=$PWD
+if [[ ! "$dir/bin/install" -ef "$0" ]]; then
+  echo "Please run 'bin/install' from dotfiles root folder"
+  exit 1
+fi
+
+#------------------------------------------------------------------------
+#UTILS
+#------------------------------------------------------------------------
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "\n=> $fmt\n" "$@"
+}
+
+section_echo(){
+  cyan=$(tput setaf 6)
+  normal=$(tput sgr0)
+  printf "\n%s\n" "${cyan}---------- $1 ----------${normal}"
+}
+
+# Sysmlink dotfiles to HOME directory and renaming existing file with .old suffix
+symlink_or_skip(){
+  local file=$1
+  local link_path=$2
+  local link_dir_path=$(dirname "${link_path}")
+  local dotfile_path="${dir}/${file}"
+  # If file exists and it's a symlink
+  if [ -L "${link_path}" ]; then
+    echo "Skipped. It already exists"
+  else
+    # If file exists
+    if [ -f "${link_path}" ]; then
+      mv "${link_path}" "${link_path}.old"
+      printf "(Renaming ${file} to ${file}.old)\t"
+    fi
+    mkdir -p $link_dir_path
+    ln -fs "${dotfile_path}" "${link_path}"
+    echo "Symlinked ${file} to ${link_path}"
+  fi
+}
+
+#------------------------------------------------------------------------
+# DOTFILES
+#------------------------------------------------------------------------
+
+section_echo "Dotfiles"
+
+# Getting dotfiles list into an array
+files=( $(find . -maxdepth 1 -name '.*' -type f | sed 's#^\./##') )
+
+for file in ${files[@]}; do
+  printf "${file}\t"
+  symlink_or_skip $file "${HOME}/${file}"
+done
+
+#------------------------------------------------------------------------
+# SUBLIME TEXT
+#------------------------------------------------------------------------
+
+section_echo "Sublime Text"
+fancy_echo "Sublime Text Configuration"
+
+sublime_versions=(2)
+preferences_file="Preferences.sublime-settings"
+for sublime_version in ${sublime_versions[@]}; do
+  sublime_home="${HOME}/Library/Application Support/Sublime Text ${sublime_version}"
+  sublime_default_dir="${sublime_home}/Packages/Default"
+  if [ -d "${sublime_home}" ]; then
+    # Symlink Sublime preferences
+    printf "${preferences_file}\t"
+    symlink_or_skip $preferences_file "${sublime_default_dir}/${preferences_file}"
+
+    # Symlink Package Control
+    package_control_dir="${sublime_home}/Packages/Package Control"
+    printf "Sublime Package Control....."
+    if [ -d "${package_control_dir}" ]; then
+      echo "Already installed"
+    else
+      mkdir -p "${package_control_dir}"
+      curl -sS https://packagecontrol.io/Package%20Control.sublime-package | tar -xf - -C "${package_control_dir}"
+      echo "Installed"
+    fi
+  else
+    echo "Sublime Text ${sublime_version} is not installed"
+  fi
+done
+
+#------------------------------------------------------------------------
+# VIM
+#------------------------------------------------------------------------
+
+section_echo "Vim"
+fancy_echo "Vim Monokai color theme"
+symlink_or_skip .vim/colors/monokai.vim ${HOME}/.vim/colors/monokai.vim
+
+fancy_echo "Vundle"
+git submodule init && git submodule update
+symlink_or_skip Vundle.vim ${HOME}/.vim/bundle/Vundle.vim
+
+fancy_echo "Vim plugins"
+symlink_or_skip bundles.vim ${HOME}/.vim/bundles.vim
+vim +PluginInstall +qall
+
+#------------------------------------------------------------------------
+# ZSH
+#------------------------------------------------------------------------
+
+section_echo "ZSH"
+fancy_echo "Oh-My-Zsh plugins"
+
+ZSH=~/.oh-my-zsh
+zsh_plugins_path=$ZSH/custom/plugins
+
+echo "Installing zsh-autosuggestions ..."
+autosuggestions_path=$zsh_plugins_path/zsh-autosuggestions
+if [ -d $autosuggestions_path ]; then
+  echo "zsh-autosuggestions already installed."
+else
+  git clone git://github.com/zsh-users/zsh-autosuggestions $autosuggestions_path
+fi
+
+echo "Installing zsh-syntax-highlighting ..."
+syntax_highlighting_path=$zsh_plugins_path/zsh-syntax-highlighting
+if [ -d $syntax_highlighting_path ]; then
+  echo "zsh-syntax-highlighting already installed."
+else
+  mkdir -p $zsh_plugins_path
+  git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $syntax_highlighting_path
+fi
