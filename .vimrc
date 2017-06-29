@@ -98,6 +98,7 @@ map <Leader>fnt :NERDTreeFind<CR>
 set softtabstop=2 shiftwidth=2 expandtab
 
 colorscheme monokai
+hi Search term=bold,underline cterm=NONE guibg=Grey40 ctermbg=LightYellow ctermfg=Black
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
