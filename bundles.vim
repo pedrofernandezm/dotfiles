@@ -102,10 +102,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Provides you easy navigation between tmux panes and vim splits
 " Mopre info: https://github.com/christoomey/vim-tmux-navigator
 
-Plugin 'scrooloose/syntastic'
-" a syntax checking plugin for Vim that runs files through external syntax checkers and displays any resulting errors to the user
-" More info: https://github.com/scrooloose/syntastic
-
 Plugin 'vim-scripts/IndexedSearch'
 " Displays 'Nth match out of M' at every search
 " https://github.com/vim-scripts/IndexedSearch
@@ -169,3 +165,8 @@ Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'mattn/emmet-vim'
 "emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
 "https://github.com/mattn/emmet-vim
+
+Plugin 'w0rp/ale'
+"ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim
+"and Vim 8 while you edit your text files.
+"https://github.com/w0rp/ale
