@@ -130,6 +130,9 @@ set noswapfile
 " The encoding displayed.
 set encoding=utf-8
 
+" allows per-project configuration files
+set exrc
+
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
