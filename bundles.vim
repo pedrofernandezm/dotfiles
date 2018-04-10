@@ -140,7 +140,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 "
 Plugin 'tpope/vim-rails'
 " Plugin for working with Ruby on Rails applications
-" More info: https://github.com/tpope/vim-rails
+" https://github.com/tpope/vim-rails
 
 Plugin 'isRuslan/vim-es6'
 " Write JavaScript ES6 easily with vim
@@ -155,18 +155,26 @@ Plugin 'bronson/vim-trailing-whitespace'
 " https://github.com/bronson/vim-trailing-whitespace
 
 Plugin 'pangloss/vim-javascript'
-"JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
-"https://github.com/pangloss/vim-javascript
+" JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
+" https://github.com/pangloss/vim-javascript
 
-Plugin 'maxmellon/vim-jsx-pretty'
-"React JSX syntax pretty highlighting for vim.
-"https://github.com/MaxMEllon/vim-jsx-pretty
+Plugin 'mxw/vim-jsx'
+" React JSX syntax highlighting and indenting
+" https://github.com/mxw/vim-jsx
 
 Plugin 'mattn/emmet-vim'
-"emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
-"https://github.com/mattn/emmet-vim
+" emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
+" https://github.com/mattn/emmet-vim
+
+Plugin 'ntpeters/vim-better-whitespace'
+" causes all trailing whitespace characters to be highlighted.
+" https://github.com/ntpeters/vim-better-whitespace
 
 Plugin 'w0rp/ale'
-"ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim
-"and Vim 8 while you edit your text files.
-"https://github.com/w0rp/ale
+" ALE (Asynchronous Lint Engine) is a plugin for providing linting while you edit your text files
+" https://github.com/w0rp/ale
+
+Plugin 'ryanoasis/vim-devicons'
+" Adds filetype glyphs (icons) to various vim plugins
+" https://github.com/ryanoasis/vim-devicons
+
