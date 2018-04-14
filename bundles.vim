@@ -1,3 +1,7 @@
+Plugin 'sheerun/vim-polyglot'
+" A solid language pack for Vim.
+" More info: https://github.com/sheerun/vim-polyglot
+
 Plugin 'AndrewRadev/splitjoin.vim'
 " Conversion of multiline of codes into one-liners and visceversa (3)
 " More info: https://github.com/AndrewRadev/splitjoin.vim
@@ -37,10 +41,6 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 " A git wrapper for vim, provides you some git commands out-of-the-box.(4.5)
 " http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
-
-Plugin 'tpope/vim-git'
-" Syntax, indent, and filetype plugin for git, gitcommit, gitconfig, gitrebase, and gitsendemail.
-" More info: http://www.vim.org/scripts/script.php?script_id=1654
 
 Plugin 'tpope/vim-pathogen'
 " Allows you to install plugins and runtime files in their own private directories, Vim package manager (4.5)
@@ -146,21 +146,9 @@ Plugin 'isRuslan/vim-es6'
 " Write JavaScript ES6 easily with vim
 " https://github.com/isRuslan/vim-es6
 
-Plugin 'kylef/apiblueprint.vim'
-" Syntax highlighting and linting for API Blueprint
-" https://github.com/kylef/apiblueprint.vim
-
 Plugin 'bronson/vim-trailing-whitespace'
 " Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
 " https://github.com/bronson/vim-trailing-whitespace
-
-Plugin 'pangloss/vim-javascript'
-"JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
-"https://github.com/pangloss/vim-javascript
-
-Plugin 'maxmellon/vim-jsx-pretty'
-"React JSX syntax pretty highlighting for vim.
-"https://github.com/MaxMEllon/vim-jsx-pretty
 
 Plugin 'mattn/emmet-vim'
 "emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
