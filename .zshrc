@@ -10,11 +10,11 @@ plugins=(git ruby rails autojump history-substring-search zsh-autosuggestions zs
 # Allow [, ],or ?
 unsetopt nomatch
 
+zrcl="$HOME/.zshrc.local"
+[[ ! -a $zrcl ]] || source $zrcl
+
 source $HOME/.aliases
 source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export EDITOR='vim'
-
-zrcl="$HOME/.zshrc.local"
-[[ ! -a $zrcl ]] || source $zrcl

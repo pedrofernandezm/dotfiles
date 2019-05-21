@@ -11,6 +11,12 @@ fi
 #------------------------------------------------------------------------
 #UTILS
 #------------------------------------------------------------------------
+COLOR_ESC='\033[0;'
+COLOR_CYAN=$COLOR_ESC"36m"
+COLOR_GREEN=$COLOR_ESC"32m"
+COLOR_RED=$COLOR_ESC"31m"
+COLOR_YELLOW=$COLOR_ESC"33m"
+COLOR_RESET=$COLOR_ESC"0m"
 
 fancy_echo() {
   local fmt="$1"; shift
@@ -19,10 +25,16 @@ fancy_echo() {
   printf "\n=> $fmt\n" "$@"
 }
 
+installing(){
+  echo -n $1"... "
+}
+
+ok(){
+  echo -e "${COLOR_GREEN}[ok]${COLOR_RESET}"
+}
+
 section_echo(){
-  cyan=$(tput setaf 6)
-  normal=$(tput sgr0)
-  printf "\n%s\n" "${cyan}---------- $1 ----------${normal}"
+  echo -e "\n${COLOR_CYAN}--------------- $1 ---------------${COLOR_RESET}\n"
 }
 
 # Sysmlink dotfiles to HOME directory and renaming existing file with .old suffix
@@ -33,16 +45,16 @@ symlink_or_skip(){
   local dotfile_path="${dir}/${file}"
   # If file exists and it's a symlink
   if [ -L "${link_path}" ]; then
-    echo "Skipped. It already exists"
+    echo -e "${COLOR_YELLOW}Skipped. It already exists${COLOR_RESET}"
   else
     # If file exists
     if [ -f "${link_path}" ]; then
       mv "${link_path}" "${link_path}.old"
-      printf "(Renaming ${file} to ${file}.old)\t"
+      echo -en "${COLOR_YELLOW}(Renaming ${file} to ${file}.old)${COLOR_RESET}\t"
     fi
     mkdir -p $link_dir_path
     ln -fs "${dotfile_path}" "${link_path}"
-    echo "Symlinked ${file} to ${link_path}"
+    echo -e "${COLOR_GREEN}Symlinked ${file} to ${link_path}${COLOR_RESET}"
   fi
 }
 
@@ -50,7 +62,7 @@ symlink_or_skip(){
 # DOTFILES
 #------------------------------------------------------------------------
 
-section_echo "Dotfiles"
+section_echo "DOTFILES"
 
 # Getting dotfiles list into an array
 files=( $(find . -maxdepth 1 -name '.*' -type f | sed 's#^\./##') )
@@ -64,15 +76,15 @@ done
 # VIM
 #------------------------------------------------------------------------
 
-section_echo "Vim"
-fancy_echo "Vim Monokai color theme"
+section_echo "VIM"
+installing "Vim Monokai color theme"
 symlink_or_skip .vim/colors/monokai.vim ${HOME}/.vim/colors/monokai.vim
 
-fancy_echo "Vundle"
+installing "Vundle"
 git submodule init && git submodule update
 symlink_or_skip Vundle.vim ${HOME}/.vim/bundle/Vundle.vim
 
-fancy_echo "Vim plugins"
+installing "Vim plugins"
 symlink_or_skip bundles.vim ${HOME}/.vim/bundles.vim
 vim +PluginInstall +qall
 
