@@ -4,6 +4,7 @@ set -e
 
 source ./scripts/helpers.sh;
 
+./scripts/tools.sh
 ./scripts/dotfiles.sh
 ./scripts/vim.sh
 ./scripts/zsh.sh

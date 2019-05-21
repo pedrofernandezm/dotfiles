@@ -11,3 +11,6 @@ vim:
 
 zsh:
 	@./scripts/zsh.sh
+
+tools:
+	@./scripts/tools.sh

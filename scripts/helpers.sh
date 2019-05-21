@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -e
 set encoding=utf-8
 
 #EMOJIS
@@ -40,9 +39,9 @@ function symlink_or_skip {
   local file=$1
   local link_path=$2
   local link_dir_path=$(dirname "${link_path}")
-  local dotfile_path="${dir}/${file}"
+  local dotfile_path="${PWD}/${file}"
   local message=""
-  # If file exists and it's a symlink
+  # If file exists and it's not a symlink
   if [ ! -L "${link_path}" ] && [ -f "${link_path}" ]; then
     local today=$(date +"%Y%m%d%H%M%S")
     local backup_filename="${file}.${today}"

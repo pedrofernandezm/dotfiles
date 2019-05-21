@@ -2,10 +2,10 @@
 
 source ./scripts/helpers.sh;
 
-title DOTFILES;
+title "CONFIGURATION FILES";
 
 # Getting dotfiles list into an array
-files=( $(find $DOTFILES_PATH -maxdepth 1 -name '.*' -type f | sed 's#^\./##') )
+files=(.aliases .docker-aliases .gemrc .gitconfig .gitignore_global .tmux.conf .vimrc .zshrc)
 
 for file in ${files[@]}; do
   installing "${file}\t"
