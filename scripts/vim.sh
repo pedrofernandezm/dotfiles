@@ -9,10 +9,14 @@ mkdir -p ${HOME}/.vim/colors
 curl -q -o ${HOME}/.vim/colors/monokai.vim https://raw.githubusercontent.com/sickill/vim-monokai/master/colors/monokai.vim &> /dev/null
 installed "Vim Monokai color theme"
 
-installing "Vundle"
-git clone -q https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
-installed "Vundle"
+installing "Vim-plug"
+curl -qfLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &> /dev/null
+installed "Vim-plug"
 
-installing "Vim plugins"
+installing "bundles.vim"
 symlink_or_skip bundles.vim ${HOME}/.vim/bundles.vim
-vim +PluginInstall +qall
+
+installing "Vim Plugins"
+vim '+PlugInstall --sync' +qall &> /dev/null
+installed "Vim Plugins"

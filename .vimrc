@@ -1,16 +1,13 @@
 " Highlight default syntax
 syntax on
 
-" Vundle config
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+" Plugins config
+call plug#begin('~/.vim/bundle')
 source ~/.vim/bundles.vim
 if filereadable(expand('~/.vim/bundles.vim.local'))
   source ~/.vim/bundles.vim.local
 endif
-call vundle#end()
+call plug#end()
 
 " Allow set indent per filetype
 filetype plugin indent on
