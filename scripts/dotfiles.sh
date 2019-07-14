@@ -8,6 +8,5 @@ title "CONFIGURATION FILES";
 files=(.aliases .docker-aliases .gemrc .gitconfig .gitignore_global .tmux.conf .vimrc .zshrc)
 
 for file in ${files[@]}; do
-  installing "${file}\t"
-  symlink_or_skip $file "${HOME}/${file}"
+  install_file $file "${HOME}/${file}"
 done

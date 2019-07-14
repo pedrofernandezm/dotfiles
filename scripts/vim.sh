@@ -14,8 +14,7 @@ curl -qfLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &> /dev/null
 installed "Vim-plug"
 
-installing "bundles.vim"
-symlink_or_skip bundles.vim ${HOME}/.vim/bundles.vim
+install_file bundles.vim ${HOME}/.vim/bundles.vim
 
 installing "Vim Plugins"
 vim '+PlugInstall --sync' +qall &> /dev/null

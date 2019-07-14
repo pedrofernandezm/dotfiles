@@ -34,22 +34,24 @@ function installed {
   fi
 }
 
-# Sysmlink dotfiles to HOME directory and renaming existing file with .old suffix
-function symlink_or_skip {
-  local file=$1
-  local link_path=$2
-  local link_dir_path=$(dirname "${link_path}")
-  local dotfile_path="${PWD}/${file}"
-  local message=""
-  # If file exists and it's not a symlink
-  if [ ! -L "${link_path}" ] && [ -f "${link_path}" ]; then
-    local today=$(date +"%Y%m%d%H%M%S")
-    local backup_filename="${file}.${today}"
-    mv "${link_path}" "${link_path}.${today}"
-    message="${YELLOW}Existing ${file} renamed to ${backup_filename}${NC}\t"
-  fi
-  mkdir -p $link_dir_path
-  ln -fs "${dotfile_path}" "${link_path}"
-  installed $file "${message}"
+function backup_file {
+  local original_file_path=$1
+  local filename=$(basename $original_file_path)
+  local today=$(date +"%Y%m%d%H%M%S")
+  local backup_filename="${filename}.${today}"
+  mv "${original_file_path}" "${original_file_path}.${today}"
+  echo "${YELLOW}Existing ${filename} renamed to ${backup_filename}${NC}\t"
 }
 
+function install_file {
+  local file=$1
+  local installation_path=$2
+  local origin_path="${PWD}/${file}"
+  local message=""
+  installing "${file}"
+  if [ -f "${installation_path}" ]; then
+    message=$(backup_file $installation_path)
+  fi
+  cp "${origin_path}" "${installation_path}"
+  installed $file "${message}"
+}
