@@ -1,7 +1,9 @@
 # Dotfiles
 
 ## What are dotfiles?
-Dotfiles are basically plain text files that start with a '.' and are use to set preferences for things like Git and Vim. To see your current dotfiles, open a terminal and in your home folder run this:
+Dotfiles are basically plain text files that start with a '.' and are use to set
+preferences for things like Git and Vim. To see your current dotfiles, open a
+terminal and in your home folder run this:
 
 ```
 $ ls -a
@@ -12,7 +14,7 @@ $ ls -a
 First clone the repo:
 
 ```
-$ git clone git@github.com:pedrofernandezm/dotfiles.git
+$ git clone --recurse-submodules git@github.com:pedrofernandezm/dotfiles.git
 ```
 
 Then cd into the dotfiles directory and run this script:
@@ -24,11 +26,16 @@ $ bin/install
 
 This will symlink all dotfiles into your home directory.
 
-This script will only install files that do not already exist in your $HOME directory. if you have, e.g. your own .vimrc file, the script will rename it as .vimrc.old so you can get what you need from there and move it into ~/.vimrc.local. Do not worry! Dotfiles will source it for you.
+This script will only install files that do not already exist in your $HOME
+directory. if you have, e.g. your own .vimrc file, the script will rename it as
+.vimrc.old so you can get what you need from there and move it into
+~/.vimrc.local. Do not worry! Dotfiles will source it for you.
 
 ### Extras
 
-This script will install extra tools required for some plugins functionality. It's not mandatory to install the extras, but it is highly recommended. The script will work on Mac or Linux (Ubuntu):
+This script will install extra tools required for some plugins functionality.
+It's not mandatory to install the extras, but it is highly recommended. The
+script will work on Mac or Linux (Ubuntu):
 
 ```
 bin/extras.sh

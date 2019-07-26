@@ -43,6 +43,9 @@ alias gra='git rebase --abort'
 alias gcp='git cherry-pick'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
 
+# SpaceVim
+alias svim='vim -u ~/.SpaceVim/vimrc'
+
 # Docker
 alias dc='docker-compose'
 alias dcu='dc up'

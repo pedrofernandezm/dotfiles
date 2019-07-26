@@ -1,3 +1,9 @@
 [submodule "Vundle.vim"]
 	path = Vundle.vim
 	url = git@github.com:VundleVim/Vundle.vim.git
+[submodule "theme-iterm"]
+	path = theme-iterm
+	url = git@github.com:challenger-deep-theme/iterm.git
+[submodule "theme-tmux"]
+	path = theme-tmux
+	url = git@github.com:challenger-deep-theme/tmux.git

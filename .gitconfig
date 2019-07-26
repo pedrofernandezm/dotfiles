@@ -1,33 +1,35 @@
 [alias]
-	st = status
-	ci = commit
-	co = checkout
-	br = branch
-	cp = cherry-pick
-	cob = checkout -b
-	amend = commit --amend -CHEAD
-	hist = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	tree = log --graph --oneline --decorate --color --all
-	ri = "!f(){ git rebase --interactive HEAD~${1}; };f"
-	rmbranch = "!f(){ git branch -d ${1} && git push origin --delete ${1}; };f"
-	la = "!git config -l | grep alias | cut -c 7-"
-	wip = !git add -A && git commit -m 'WIP'
-[color]
-	ui = auto
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  cp = cherry-pick
+  cob = checkout -b
+  amend = commit --amend -CHEAD
+  hist = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  tree = log --graph --oneline --decorate --color --all
+  ri = "!f(){ git rebase --interactive HEAD~${1}; };f"
+  rmbranch = "!f(){ git branch -d ${1} && git push origin --delete ${1}; };f"
+  la = "!git config -l | grep alias | cut -c 7-"
+  wip = !git add -A && git commit -m 'WIP'
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore_global
+  editor = vim
+  hooksPath = ~/projects/dotfiles/githooks
 [help]
-	autocorrect = 10
+  autocorrect = 10
 [interactive]
-	singlekey = true
+  singlekey = true
 [merge]
-	summary = true
+  summary = true
 [push]
-	default = simple
+  default = simple
 [pull]
-	rebase = true
+  rebase = true
 [rebase]
-	autosquash = true
+  autosquash = true
+[color]
+  ui = auto
+[commit]
+  template = ~/.gitmessage
 [include]
-	path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
