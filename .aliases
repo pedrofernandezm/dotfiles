@@ -20,6 +20,11 @@ alias tmn='tmux new -s'
 alias tma='tmux attach -t'
 
 # Git
+alias gsm='git switch master'
+alias gs='git switch'
+alias gsc='git switch --create'
+alias gre='git restore'
+alias gres='git restore --staged'
 alias gap='git add -p'
 alias ga='git add'
 alias gnap='git add -N . && git add -p'
@@ -42,9 +47,6 @@ alias gri='git rebase --interactive'
 alias gra='git rebase --abort'
 alias gcp='git cherry-pick'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
-
-# SpaceVim
-alias svim='vim -u ~/.SpaceVim/vimrc'
 
 # Docker
 alias dc='docker-compose'
