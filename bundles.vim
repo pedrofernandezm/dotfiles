@@ -162,3 +162,7 @@ Plug 'w0rp/ale'
 "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim
 "and Vim 8 while you edit your text files.
 "https://github.com/w0rp/ale
+
+Plugin 'editorconfig/editorconfig-vim'
+" EditorConfig plugin for Vim
+" https://github.com/editorconfig/editorconfig-vim
