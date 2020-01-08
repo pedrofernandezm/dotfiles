@@ -4,8 +4,8 @@ ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
 ZSH_THEME="gallois"
 
-# Note: zsh-syntax-highlighting needs to be the last element of the array
-plugins=(git ruby rails autojump history-substring-search zsh-autosuggestions zsh-syntax-highlighting)
+# Note: fast-syntax-highlighting needs to be the last element of the array
+plugins=(git ruby rails autojump history-substring-search zsh-autosuggestions fast-syntax-highlighting)
 
 # Allow [, ],or ?
 unsetopt nomatch
