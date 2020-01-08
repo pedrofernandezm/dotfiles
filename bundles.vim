@@ -166,3 +166,7 @@ Plug 'w0rp/ale'
 Plugin 'editorconfig/editorconfig-vim'
 " EditorConfig plugin for Vim
 " https://github.com/editorconfig/editorconfig-vim
+
+Plugin 'ryanoasis/vim-devicons'
+" Adds filetype glyphs (icons) to various vim plugins
+" https://github.com/ryanoasis/vim-devicons
