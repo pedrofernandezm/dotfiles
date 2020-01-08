@@ -80,9 +80,9 @@ section_echo "VIM"
 installing "Vim Monokai color theme"
 symlink_or_skip .vim/colors/monokai.vim ${HOME}/.vim/colors/monokai.vim
 
-installing "Vundle"
-git submodule init && git submodule update
-symlink_or_skip Vundle.vim ${HOME}/.vim/bundle/Vundle.vim
+installing "vim-plug"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 installing "Vim plugins"
 symlink_or_skip bundles.vim ${HOME}/.vim/bundles.vim
