@@ -1,3 +1,7 @@
+Plug 'crusoexia/vim-monokai'
+" Refined monokai color scheme for vim, based from sickill/vim-monokai
+" https://github.com/crusoexia/vim-monokai
+
 Plug 'AndrewRadev/splitjoin.vim'
 " Conversion of multiline of codes into one-liners and visceversa (3)
 " More info: https://github.com/AndrewRadev/splitjoin.vim
@@ -113,10 +117,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'Rykka/lastbuf.vim'
 " Allows you to open last closed buffer
 " More info: https://github.com/Rykka/lastbuf.vim
-
-Plug 'altercation/vim-colors-solarized'
-" colorscheme for the vim
-" More info: https://github.com/altercation/vim-colors-solarized
 
 Plug 'ctrlpvim/ctrlp.vim'
 " Fuzzy file, buffer, mru, tag, etc finder
