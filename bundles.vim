@@ -150,9 +150,9 @@ Plug 'isRuslan/vim-es6'
 " Write JavaScript ES6 easily with vim
 " https://github.com/isRuslan/vim-es6
 
-Plug 'bronson/vim-trailing-whitespace'
-" Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
-" https://github.com/bronson/vim-trailing-whitespace
+Plugin 'ntpeters/vim-better-whitespace'
+" causes all trailing whitespace characters to be highlighted.
+" https://github.com/ntpeters/vim-better-whitespace
 
 Plug 'mattn/emmet-vim'
 "emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
