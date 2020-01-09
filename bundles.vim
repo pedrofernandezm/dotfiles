@@ -1,3 +1,19 @@
+Plug 'crusoexia/vim-monokai'
+" Refined monokai color scheme for vim, based from sickill/vim-monokai
+" https://github.com/crusoexia/vim-monokai
+
+Plugin 'sheerun/vim-polyglot'
+" A solid language pack for Vim.
+" More info: https://github.com/sheerun/vim-polyglot
+
+Plugin 'tpope/vim-rails'
+" Plugin for working with Ruby on Rails applications
+" https://github.com/tpope/vim-rails
+
+Plugin 'isRuslan/vim-es6'
+" Write JavaScript ES6 easily with vim
+" https://github.com/isRuslan/vim-es6
+
 Plug 'AndrewRadev/splitjoin.vim'
 " Conversion of multiline of codes into one-liners and visceversa (3)
 " More info: https://github.com/AndrewRadev/splitjoin.vim
@@ -37,14 +53,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 " A git wrapper for vim, provides you some git commands out-of-the-box.(4.5)
 " http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
-
-Plug 'tpope/vim-git'
-" Syntax, indent, and filetype plugin for git, gitcommit, gitconfig, gitrebase, and gitsendemail.
-" More info: http://www.vim.org/scripts/script.php?script_id=1654
-
-Plug 'tpope/vim-pathogen'
-" Allows you to install plugins and runtime files in their own private directories, Vim package manager (4.5)
-" More info: https://github.com/tpope/vim-pathogen
 
 Plug 'tpope/vim-ragtag'
 " Allows you to map HTML, XML, PHP, ASP, eRuby, JSP among others.
@@ -114,10 +122,6 @@ Plug 'Rykka/lastbuf.vim'
 " Allows you to open last closed buffer
 " More info: https://github.com/Rykka/lastbuf.vim
 
-Plug 'altercation/vim-colors-solarized'
-" colorscheme for the vim
-" More info: https://github.com/altercation/vim-colors-solarized
-
 Plug 'ctrlpvim/ctrlp.vim'
 " Fuzzy file, buffer, mru, tag, etc finder
 " More info: https://github.com/ctrlpvim/ctrlp.vim
@@ -146,21 +150,9 @@ Plug 'isRuslan/vim-es6'
 " Write JavaScript ES6 easily with vim
 " https://github.com/isRuslan/vim-es6
 
-Plug 'kylef/apiblueprint.vim'
-" Syntax highlighting and linting for API Blueprint
-" https://github.com/kylef/apiblueprint.vim
-
-Plug 'bronson/vim-trailing-whitespace'
-" Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
-" https://github.com/bronson/vim-trailing-whitespace
-
-Plug 'pangloss/vim-javascript'
-"JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
-"https://github.com/pangloss/vim-javascript
-
-Plug 'maxmellon/vim-jsx-pretty'
-"React JSX syntax pretty highlighting for vim.
-"https://github.com/MaxMEllon/vim-jsx-pretty
+Plugin 'ntpeters/vim-better-whitespace'
+" causes all trailing whitespace characters to be highlighted.
+" https://github.com/ntpeters/vim-better-whitespace
 
 Plug 'mattn/emmet-vim'
 "emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
@@ -170,3 +162,11 @@ Plug 'w0rp/ale'
 "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim
 "and Vim 8 while you edit your text files.
 "https://github.com/w0rp/ale
+
+Plugin 'editorconfig/editorconfig-vim'
+" EditorConfig plugin for Vim
+" https://github.com/editorconfig/editorconfig-vim
+
+Plugin 'ryanoasis/vim-devicons'
+" Adds filetype glyphs (icons) to various vim plugins
+" https://github.com/ryanoasis/vim-devicons

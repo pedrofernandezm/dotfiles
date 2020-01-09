@@ -15,9 +15,9 @@ if [ ! -d $autosuggestions_path ]; then
 fi
 installed "zsh-autosuggestions"
 
-installing "zsh-syntax-highlighting"
-syntax_highlighting_path=$zsh_plugins_path/zsh-syntax-highlighting
+installing "fast-syntax-highlighting"
+syntax_highlighting_path=$zsh_plugins_path/fast-syntax-highlighting
 if [ ! -d $syntax_highlighting_path ]; then
-  git clone -q git://github.com/zsh-users/zsh-syntax-highlighting.git $syntax_highlighting_path
+  git clone -q  https://github.com/zdharma/fast-syntax-highlighting $syntax_highlighting_path
 fi
-installed "zsh-syntax-highlighting"
+installed "fast-syntax-highlighting"

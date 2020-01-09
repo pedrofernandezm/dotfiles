@@ -77,16 +77,13 @@ done
 #------------------------------------------------------------------------
 
 section_echo "VIM"
-installing "Vim Monokai color theme"
-symlink_or_skip .vim/colors/monokai.vim ${HOME}/.vim/colors/monokai.vim
+installing "vim-plug"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-installing "Vundle"
-git submodule init && git submodule update
-symlink_or_skip Vundle.vim ${HOME}/.vim/bundle/Vundle.vim
-
-installing "Vim plugins"
+installing "Vim Plugins"
 symlink_or_skip bundles.vim ${HOME}/.vim/bundles.vim
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 #------------------------------------------------------------------------
 # ZSH
@@ -97,6 +94,7 @@ fancy_echo "Oh-My-Zsh plugins"
 
 ZSH=~/.oh-my-zsh
 zsh_plugins_path=$ZSH/custom/plugins
+mkdir -p $zsh_plugins_path
 
 echo "Installing zsh-autosuggestions ..."
 autosuggestions_path=$zsh_plugins_path/zsh-autosuggestions
@@ -106,11 +104,10 @@ else
   git clone git://github.com/zsh-users/zsh-autosuggestions $autosuggestions_path
 fi
 
-echo "Installing zsh-syntax-highlighting ..."
-syntax_highlighting_path=$zsh_plugins_path/zsh-syntax-highlighting
+echo "Installing fast-syntax-highlighting"
+syntax_highlighting_path=$zsh_plugins_path/fast-syntax-highlighting
 if [ -d $syntax_highlighting_path ]; then
-  echo "zsh-syntax-highlighting already installed."
+  echo "fast-syntax-highlighting already installed."
 else
-  mkdir -p $zsh_plugins_path
-  git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $syntax_highlighting_path
+  git clone https://github.com/zdharma/fast-syntax-highlighting $syntax_highlighting_path
 fi
