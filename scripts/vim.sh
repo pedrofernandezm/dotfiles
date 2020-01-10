@@ -12,5 +12,5 @@ installed "Vim-plug"
 install_file bundles.vim ${HOME}/.vim/bundles.vim
 
 installing "Vim Plugins"
-vim '+PlugInstall --sync' +qall &> /dev/null
+vim +PlugInstall +qall &> /dev/null
 installed "Vim Plugins"
