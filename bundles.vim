@@ -2,15 +2,15 @@ Plug 'crusoexia/vim-monokai'
 " Refined monokai color scheme for vim, based from sickill/vim-monokai
 " https://github.com/crusoexia/vim-monokai
 
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " A solid language pack for Vim.
 " More info: https://github.com/sheerun/vim-polyglot
 
-Plugin 'tpope/vim-rails'
-" Plugin for working with Ruby on Rails applications
+Plug 'tpope/vim-rails'
+" lugin for working with Ruby on Rails applications
 " https://github.com/tpope/vim-rails
 
-Plugin 'isRuslan/vim-es6'
+Plug 'isRuslan/vim-es6'
 " Write JavaScript ES6 easily with vim
 " https://github.com/isRuslan/vim-es6
 
@@ -150,7 +150,7 @@ Plug 'isRuslan/vim-es6'
 " Write JavaScript ES6 easily with vim
 " https://github.com/isRuslan/vim-es6
 
-Plugin 'ntpeters/vim-better-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 " causes all trailing whitespace characters to be highlighted.
 " https://github.com/ntpeters/vim-better-whitespace
 
@@ -163,10 +163,10 @@ Plug 'w0rp/ale'
 "and Vim 8 while you edit your text files.
 "https://github.com/w0rp/ale
 
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 " EditorConfig plugin for Vim
 " https://github.com/editorconfig/editorconfig-vim
 
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 " Adds filetype glyphs (icons) to various vim plugins
 " https://github.com/ryanoasis/vim-devicons
