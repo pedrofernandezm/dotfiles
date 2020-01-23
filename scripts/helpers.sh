@@ -17,17 +17,17 @@ YELLOW='\e[33m'
 GREY='\e[90m'
 NC='\e[0m' # No Color
 
-function title {
+function echo_title {
   TITLE=$1
   printf "\n${GEAR}  SETTING UP ${TITLE}\n"
   printf -- "··············································\n"
 }
 
-function installing {
+function echo_installing {
   printf "\n${HOURGLASS} Installing ${1}... "
 }
 
-function installed {
+function echo_installed {
   printf "\r${CHECK} ${GREEN}${1} installed successfully${NC}\n"
   if [ ! -z "${2}" ]; then
     printf "\t${2}\n"
@@ -48,10 +48,10 @@ function install_file {
   local installation_path=$2
   local origin_path="${PWD}/${file}"
   local message=""
-  installing "${file}"
+  echo_installing "${file}"
   if [ -f "${installation_path}" ]; then
     message=$(backup_file $installation_path)
   fi
   cp "${origin_path}" "${installation_path}"
-  installed $file "${message}"
+  echo_installed $file "${message}"
 }

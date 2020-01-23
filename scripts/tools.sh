@@ -4,7 +4,7 @@ set -e
 
 source ./scripts/helpers.sh;
 
-title "TOOLS"
+echo_title "TOOLS"
 
 if [ "$(uname)" == "Darwin" ]; then
   ./scripts/mac-setup.sh
