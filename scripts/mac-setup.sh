@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source ./scripts/helpers.sh;
+source ./scripts/oh-my-zsh.sh;
 
 function install_package () {
   local human_name=$1
@@ -30,3 +31,5 @@ install_package "Tmux" "tmux"
 install_package "Autojump" "autojump"
 install_package "Silver Searcher" "the_silver_searcher"
 install_package "ZSH" "zsh"
+
+install_oh_my_zsh
