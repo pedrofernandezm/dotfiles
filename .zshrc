@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="gallois"
+ZSH_THEME="spaceship"
 
 # Note: fast-syntax-highlighting needs to be the last element of the array
 plugins=(git ruby rails autojump history-substring-search zsh-autosuggestions fast-syntax-highlighting)
