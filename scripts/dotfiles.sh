@@ -10,3 +10,6 @@ files=(.aliases .docker-aliases .gemrc .gitconfig .gitignore_global .tmux.conf .
 for file in ${files[@]}; do
   install_file $file "${HOME}/${file}"
 done
+
+mkdir -p ${NEOVIM_PATH}
+install_file .neovim "${NEOVIM_PATH}/init.vim"

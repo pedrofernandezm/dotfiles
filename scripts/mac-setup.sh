@@ -27,6 +27,7 @@ fi
 
 install_package "Curl" "curl"
 install_package "Vim" "vim"
+install_package "NeoVim" "neovim"
 install_package "Tmux" "tmux"
 install_package "Autojump" "autojump"
 install_package "Silver Searcher" "the_silver_searcher"

@@ -14,13 +14,13 @@ function install_package () {
   echo_installed "${human_name}"
 }
 
-
 printf "${HOURGLASS} Updating package lists..."
 sudo apt-get update &> /dev/null
 printf "\r${CHECK}${GREEN} Package lists updated successfully${NC}\n"
 
 install_package "Curl" "curl"
 install_package "Vim" "vim"
+install_package "NeoVim" "neovim"
 install_package "Tmux" "tmux"
 install_package "Autojump" "autojump"
 install_package "Silver Searcher" "silversearcher-ag"

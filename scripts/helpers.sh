@@ -2,6 +2,9 @@
 
 set encoding=utf-8
 
+#PATHS
+NEOVIM_PATH=${HOME}/.config/nvim
+
 #EMOJIS
 GEAR="\xE2\x9A\x99\xEF\xB8\x8F"
 SMALL_BLUE_DIAMOND="\xF0\x9F\x94\xB9"
@@ -29,6 +32,17 @@ function echo_installing {
 
 function echo_installed {
   printf "\r${CHECK} ${GREEN}${1} installed successfully${NC}\n"
+  if [ ! -z "${2}" ]; then
+    printf "\t${2}\n"
+  fi
+}
+
+function echo_updating {
+  printf "\n${HOURGLASS} Updating ${1}... "
+}
+
+function echo_updated {
+  printf "\r${CHECK} ${GREEN}${1} updated successfully${NC}\n"
   if [ ! -z "${2}" ]; then
     printf "\t${2}\n"
   fi
