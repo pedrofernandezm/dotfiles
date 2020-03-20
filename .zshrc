@@ -10,6 +10,8 @@ plugins=(git ruby rails autojump history-substring-search zsh-autosuggestions fa
 # Allow [, ],or ?
 unsetopt nomatch
 
+ZSH_DISABLE_COMPFIX=true
+
 zrcl="$HOME/.zshrc.local"
 [[ ! -a $zrcl ]] || source $zrcl
 
