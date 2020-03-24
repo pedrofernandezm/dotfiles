@@ -12,6 +12,8 @@ unsetopt nomatch
 
 ZSH_DISABLE_COMPFIX=true
 
+export LC_ALL=en_US.UTF-8
+
 zrcl="$HOME/.zshrc.local"
 [[ ! -a $zrcl ]] || source $zrcl
 
