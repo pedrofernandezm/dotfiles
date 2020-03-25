@@ -14,11 +14,11 @@ ZSH_DISABLE_COMPFIX=true
 
 export LC_ALL=en_US.UTF-8
 
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export EDITOR='nvim'
+
 zrcl="$HOME/.zshrc.local"
 [[ ! -a $zrcl ]] || source $zrcl
 
 source $HOME/.aliases
 source $ZSH/oh-my-zsh.sh
-
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export EDITOR='vim'
