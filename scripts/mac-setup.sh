@@ -31,6 +31,7 @@ install_package "NeoVim" "neovim"
 install_package "Tmux" "tmux"
 install_package "Autojump" "autojump"
 install_package "Silver Searcher" "the_silver_searcher"
+install_package "Ack" "ack"
 install_package "ZSH" "zsh"
 
 install_oh_my_zsh

@@ -130,10 +130,6 @@ Plug 'scrooloose/nerdtree'
 " A tree explorer plugin for vim
 " More info: https://github.com/scrooloose/nerdtree
 
-Plug 'rking/ag.vim'
-" This plugin will allow you to run ag from vim, and shows the results in a split window.
-" More info: https://github.com/rking/ag.vim
-
 Plug 'bling/vim-airline'
 " Lean & mean status/tabline for vim that's light as air.
 " More info: https://github.com/bling/vim-airline
