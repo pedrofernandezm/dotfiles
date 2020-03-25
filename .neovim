@@ -100,6 +100,8 @@ set softtabstop=2 shiftwidth=2 expandtab
 silent! colorscheme monokai
 hi Search term=bold,underline cterm=NONE guibg=Grey40 ctermbg=LightYellow ctermfg=Black
 
+set clipboard=unnamed
+
 " vp doesn't replace paste buffer
 function! RestoreRegister()
   let @" = s:restore_reg
