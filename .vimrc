@@ -82,7 +82,7 @@ map <Leader><space> :nohl<cr>
 set scrolloff=5
 
 " This uses Ack.vim to search for the word under the cursor
-nnoremap <leader><bs> :Ag! '\b<c-r><c-w>\b'<cr>
+nnoremap <leader><bs> :Ack! '\b<c-r><c-w>\b'<cr>
 
 " NERDTree configuration
 let NERDTreeIgnore=['\~$', 'tmp', '\.git', '\.bundle', '.DS_Store', 'tags', '.swp']
