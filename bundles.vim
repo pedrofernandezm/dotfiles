@@ -154,10 +154,10 @@ Plug 'mattn/emmet-vim'
 "emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
 "https://github.com/mattn/emmet-vim
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 "ALE (Asynchronous Lint Engine) is a plugin for providing linting in NeoVim
 "and Vim 8 while you edit your text files.
-"https://github.com/w0rp/ale
+"https://github.com/dense-analysis/ale
 
 Plug 'editorconfig/editorconfig-vim'
 " EditorConfig plugin for Vim
