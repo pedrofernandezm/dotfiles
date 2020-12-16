@@ -5,16 +5,12 @@ syntax on
 let g:ale_completion_enabled = 1
 " let g:deoplete#enable_at_startup = 1
 
-" Vundle config
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 source ~/.vim/bundles.vim
 if filereadable(expand('~/.vim/bundles.vim.local'))
   source ~/.vim/bundles.vim.local
 endif
-call vundle#end()
+call plug#end()
 
 " Allow set indent per filetype
 filetype plugin indent on

@@ -4,7 +4,7 @@
   co = checkout
   br = branch
   cp = cherry-pick
-  cob = checkout -b
+  ; cob = checkout -b
   amend = commit --amend -CHEAD
   hist = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
   tree = log --graph --oneline --decorate --color --all
@@ -31,5 +31,9 @@
   ui = auto
 [commit]
   template = ~/.gitmessage
+  gpgsign = true
 [include]
   path = ~/.gitconfig.local
+[user]
+  signingkey = B2417DDAFE6BEF7A
+  email = edgarortegaramirez@gmail.com

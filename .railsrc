@@ -1,0 +1,4 @@
+--database=postgresql
+--skip-test
+--webpack
+-- template=
