@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# ADD HOMEBREW TO THE PATH
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # Set name of the theme to load.
 ZSH_THEME="spaceship"
 

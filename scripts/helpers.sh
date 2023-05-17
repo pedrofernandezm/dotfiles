@@ -2,70 +2,72 @@
 
 set encoding=utf-8
 
-#PATHS
-NEOVIM_PATH=${HOME}/.config/nvim
+#OUTPUT
+NORMAL_OUPUT="2>&1"
+SILENT_OUTPUT="/dev/null"
 
 #EMOJIS
+ARROW="\xE2\x9E\xA1"
+ARROW_DOWN="\xE2\xAC\x87"
 GEAR="\xE2\x9A\x99\xEF\xB8\x8F"
 SMALL_BLUE_DIAMOND="\xF0\x9F\x94\xB9"
 CHECK="\xE2\x9C\x85"
 HOURGLASS="\xE2\x8F\xB3"
 SMILING_FACE_SUNGLASSES="\xF0\x9F\x98\x8E"
 
+## Fonts
+BOLD=$(tput bold)
+UNDERLINE=$(tput sgr 0 1)
+RESET=$(tput sgr0)
 
 #COLORS
-RED='\e[31m'
-GREEN='\e[32m'
-YELLOW='\e[33m'
-GREY='\e[90m'
-NC='\e[0m' # No Color
+PURPLE=$(tput setaf 171)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 76)
+tan=$(tput setaf 3)
+BLUE=$(tput setaf 38)
+# RED='\e[31m'
+# GREEN='\e[32m'
+# YELLOW='\e[33m'
+# GREY='\e[90m'
+# NO_COLOR='\e[0m' # No Color
 
-function echo_title {
-  TITLE=$1
-  printf "\n${GEAR}  SETTING UP ${TITLE}\n"
-  printf -- "··············································\n"
+function p_title {
+  printf "\n${GEAR}  ${tan}${BOLD}$@\n---------------------------------------------------${RESET}\n"
 }
 
-function echo_installing {
-  printf "\n${HOURGLASS} Installing ${1}... "
+function p_wait {
+  printf "\n${HOURGLASS} ${@}\n"
 }
 
-function echo_installed {
-  printf "\r${CHECK} ${GREEN}${1} installed successfully${NC}\n"
-  if [ ! -z "${2}" ]; then
-    printf "\t${2}\n"
+function p_success {
+  printf "\n${CHECK} ${GREEN}${@}${RESET}\n"
+}
+
+function p_bold {
+  printf "\n${BOLD}$@${RESET}\n"
+}
+
+function is_linux {
+  if [[ "$(uname)" == "Linux" ]]; then
+    return 1
+  fi
+  return 0
+}
+
+function activate_brew {
+  if [[ is_linux ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  else
+    eval "$(/usr/local/bin/brew shellenv)"
   fi
 }
 
-function echo_updating {
-  printf "\n${HOURGLASS} Updating ${1}... "
-}
-
-function echo_updated {
-  printf "\r${CHECK} ${GREEN}${1} updated successfully${NC}\n"
-  if [ ! -z "${2}" ]; then
-    printf "\t${2}\n"
+function install_package {
+  PACKAGE_NAME=$1
+  if [[ is_linux ]]; then
+    sudo apt -y install $PACKAGE_NAME
+  else
+    brew install $PACKAGE_NAME
   fi
-}
-
-function backup_file {
-  local original_file_path=$1
-  local filename=$(basename $original_file_path)
-  local today=$(date +"%Y%m%d%H%M%S")
-  local backup_filename="${filename}.${today}"
-  mv "${original_file_path}" "${original_file_path}.${today}"
-  echo "${YELLOW}Existing ${filename} renamed to ${backup_filename}${NC}\t"
-}
-
-function install_file {
-  local file=$1
-  local installation_path=$2
-  local origin_path="${PWD}/${file}"
-  local message=""
-  echo_installing "${file}"
-  if [ -f "${installation_path}" ]; then
-    message=$(backup_file $installation_path)
-  fi
-  cp "${origin_path}" "${installation_path}"
-  echo_installed $file "${message}"
 }
